@@ -1,0 +1,223 @@
+:root {
+    --bg-color: #f7f6f2;
+    --card-bg: #ffffff;
+    --text-muted: #999999;
+    --border-radius: 12px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0 20px 40px 20px;
+    color: #333;
+}
+
+/* 頂部導覽列 */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e35933;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px 12px 8px 35px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* 屬性篩選標籤 */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.tag {
+    padding: 4px 14px;
+    border-radius: 15px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.tag.active,
+.tag:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* 屬性顏色對應 */
+.tag[data-type="all"] {
+    background-color: #cccccc;
+    color: #333;
+}
+
+.type-grass,
+.tag.type-grass {
+    background-color: #5fbc51;
+    color: white;
+}
+
+.type-poison,
+.tag.type-poison {
+    background-color: #a55a9b;
+    color: white;
+}
+
+.type-fire,
+.tag.type-fire {
+    background-color: #ea5542;
+    color: white;
+}
+
+.type-flying,
+.tag.type-flying {
+    background-color: #79a4ff;
+    color: white;
+}
+
+.type-water,
+.tag.type-water {
+    background-color: #559edf;
+    color: white;
+}
+
+.type-bug,
+.tag.type-bug {
+    background-color: #abbd25;
+    color: white;
+}
+
+.type-normal,
+.tag.type-normal {
+    background-color: #a8a87a;
+    color: white;
+}
+
+.type-electric,
+.tag.type-electric {
+    background-color: #edd53e;
+    color: #333;
+}
+
+.type-ground,
+.tag.type-ground {
+    background-color: #dfbf6e;
+    color: white;
+}
+
+.type-fairy,
+.tag.type-fairy {
+    background-color: #ee99ee;
+    color: white;
+}
+
+/* 寶可夢卡片網格 */
+.pokedex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 單張卡片樣式 */
+.pokemon-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-50px);
+    /* 模擬稍微浮起 */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.poke-id {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0 0 5px 0;
+}
+
+.poke-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+.poke-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-transform: capitalize;
+}
+
+.card-types {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.card-types .type-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: white;
+}
+
+/* 錯誤處理與隱藏 */
+.error-msg {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fde8e8;
+    color: #e53e3e;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}

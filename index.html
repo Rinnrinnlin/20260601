@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>寶可夢圖鑑</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <header class="navbar">
+        <div class="logo">寶可夢圖鑑</div>
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="搜尋名稱或編號...">
+        </div>
+    </header>
+
+    <div class="filter-container" id="filter-tags">
+        <button class="tag active" data-type="all">全部</button>
+        <button class="tag type-bug" data-type="bug">蟲</button>
+        <button class="tag type-electric" data-type="electric">電</button>
+        <button class="tag type-fairy" data-type="fairy">妖精</button>
+        <button class="tag type-fire" data-type="fire">火</button>
+        <button class="tag type-flying" data-type="flying">飛行</button>
+        <button class="tag type-grass" data-type="grass">草</button>
+        <button class="tag type-ground" data-type="ground">地面</button>
+        <button class="tag type-normal" data-type="normal">一般</button>
+        <button class="tag type-poison" data-type="poison">毒</button>
+        <button class="tag type-water" data-type="water">水</button>
+    </div>
+
+    <div id="error-message" class="error-msg hidden"></div>
+
+    <main class="pokedex-grid" id="pokedex-grid"></main>
+
+    <script src="app.js"></script>
 </body>
 </html>
